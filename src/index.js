@@ -6,7 +6,7 @@ app.get("/", (req, res) => {
   return res.send("Hello, world!");
 });
 
-app.get("/api/sing-up", (req, res) => {
+app.post("/api/sign-up", (req, res) => {
   const { name, email, password, confirmPassword } = req.body;
   const schema = Joi.object({
     name: Joi.string().min(3).required(),
