@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
 const router = require("./routes");
+const initDb = require("./config/db");
 
+initDb();
 app.use(express.json());
 app.use("/api", router);
 app.get("/", (req, res) => {
